@@ -96,7 +96,7 @@ function(a,b){jQuery.fn[b]=function(d){return d?this.bind(b,d):this.trigger(b)}}
     Dosbox.prototype.downloadScript = function() {
       this.module.setStatus('Downloading js-dos');
       this.ui.updateMessage('Downloading js-dos');
-      return new Dosbox.Xhr('https://thedoggybrad.github.io/doom_on_js-dos/js-dos-v3.js', {
+      return new Dosbox.Xhr('https://js-dos.com/cdn/js-dos-v3.js', {
         success: (function(_this) {
           return function(script) {
             var func;
@@ -255,6 +255,7 @@ function(a,b){jQuery.fn[b]=function(d){return d?this.bind(b,d):this.trigger(b)}}
       this.wrapper.append(this.canvas);
       this.wrapper.append(this.loader);
       this.wrapper.append(this.overlay);
+      this.overlay.append($('<div class="dosbox-powered">Powered by &nbsp;').append($('<a href="http://js-dos.com">js-dos.com')));
       this.overlay.append(this.start);
     }
 
